@@ -179,3 +179,4 @@ const sumOfBobsTotal = purchases
     return acc + elem.price;
   }, 0);
 console.log(sumOfBobsTotal);
+console.log();

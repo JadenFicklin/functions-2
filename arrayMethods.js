@@ -112,8 +112,6 @@ const myStrongest = monstersInYourPocket.filter(function (elem) {
 });
 console.log(myStrongest);
 
-// const myStrongest // = monstersInYourPocket.filter(/* Provide Your Callback Here */)
-
 ////////// PROBLEM 5 //////////
 
 // Do not edit code below.
@@ -136,6 +134,10 @@ const orders = [
 */
 
 // CODE HERE
+const afterTaxes = orders.map(function (elem) {
+  return elem.price + elem.price * elem.tax;
+});
+console.log(afterTaxes);
 
 ////////// PROBLEM 6 //////////
 
@@ -169,3 +171,11 @@ const purchases = [
 */
 
 // CODE HERE
+const sumOfBobsTotal = purchases
+  .filter(function (elem) {
+    return elem.owner === "Bob";
+  })
+  .reduce(function (acc, elem) {
+    return acc + elem.price;
+  }, 0);
+console.log(sumOfBobsTotal);

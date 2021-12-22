@@ -60,7 +60,11 @@ const populations = [8175133, 3792621, 2695598, 2100263];
 */
 
 // CODE HERE
-// const totalPopulation //  = populations.reduce(/* Provide Your Callback Here */)
+const totalPopulation = populations.reduce(function (accumulator, element) {
+  return accumulator + element;
+});
+
+console.log(totalPopulation);
 
 ////////// PROBLEM 4 //////////
 

@@ -105,6 +105,13 @@ const monstersInYourPocket = [
 */
 
 // CODE HERE
+const myStrongest = monstersInYourPocket.filter(function (elem) {
+  if (elem.CP > 200) {
+    return elem.CP;
+  }
+});
+console.log(myStrongest);
+
 // const myStrongest // = monstersInYourPocket.filter(/* Provide Your Callback Here */)
 
 ////////// PROBLEM 5 //////////

@@ -75,19 +75,27 @@ last(names, (lastName) => {
   If the name does not exist, invoke the callback with false as the argument.
 */
 
+// var names = ["Tyler", "Cahlan", "Ryan", "Colt", "Tyler", "Blaine", "Cahlan"];
 // CODE HERE
+function contains(arr, name, callback) {
+  if (arr.includes(name) === true) {
+    callback(true);
+  } else {
+    callback(false);
+  }
+}
 
 // UNCOMMENT THE FUNCTION CALL BELOW
 // RUN THIS FILE WITH NODE
 // CHECK YOUR ANSWER
 
-// contains(names, 'Colt', result => {
-//   if(result === true){
-//     console.log('Colt is in the array')
-//   } else {
-//     console.log('Colt is not in the array')
-//   }
-// })
+contains(names, "Colt", (result) => {
+  if (result === true) {
+    console.log("Colt is in the array");
+  } else {
+    console.log("Colt is not in the array");
+  }
+});
 
 ////////// PROBLEM 5 //////////
 
@@ -96,8 +104,19 @@ last(names, (lastName) => {
   Remove any duplicate values from the array, and invoke the callback with the modified array as an argument.
   Hint: you can use a nested for loop to do this.
 */
-
+// var names = ["Tyler", "Cahlan", "Ryan", "Colt", "Tyler", "Blaine", "Cahlan"];
 // CODE HERE
+function uniq(arr, callback) {
+  for (let i = 0; i < arr.length; i++) {
+    for (let a = 0; a < arr.length; a++) {
+      if (arr[i] === arr[a]) {
+        arr.splice(a, 1);
+        a--;
+      }
+    }
+  }
+  callback(arr);
+}
 
 /*
   Invoke the uniq function, passing in the names array from above and a callback function.
@@ -107,6 +126,11 @@ last(names, (lastName) => {
 */
 
 // CODE HERE
+uniq(names, (uniqArr) =>
+  console.log(
+    `The new names array with all the duplicate items removed is ${uniqArr}`
+  )
+);
 
 ////////// PROBLEM 6 //////////
 

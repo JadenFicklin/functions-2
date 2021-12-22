@@ -140,6 +140,7 @@ uniq(names, (uniqArr) =>
 */
 
 // CODE HERE
+const each = (arr, callback) => arr.forEach((el, i) => callback(el, i));
 
 /*
   Invoke the each function, passing in the names array and a callback function.
@@ -149,6 +150,8 @@ uniq(names, (uniqArr) =>
 */
 
 // CODE HERE
+
+each(names, (item, index) => `The item at index ${index} is this ${item}`);
 
 ////////// PROBLEM 7 //////////
 
